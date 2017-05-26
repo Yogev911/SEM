@@ -3,8 +3,7 @@ using namespace std;
 int main()
 {
 	int x;
-	cout << "Hello world\n";
-	cout << "Visual is working perfect on win 10 on my mac!\n";
+	cout << "Panel main cpp\n";
 	system("Pause");
 	return 0;
 }
