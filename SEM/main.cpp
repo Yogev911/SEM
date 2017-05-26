@@ -3,7 +3,7 @@ using namespace std;
 int main()
 {
 	int x;
-	cout << "Control main cpp\n";
+	cout << "writeing to the new Dev Branch\n";
 	system("Pause");
 	return 0;
 }
