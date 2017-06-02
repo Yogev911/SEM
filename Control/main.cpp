@@ -6,4 +6,5 @@ int main()
 	cout << "Control main cpp\n";
 	system("Pause");
 	return 0;
+
 }
