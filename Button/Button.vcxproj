@@ -20,6 +20,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Button.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Button.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0B37FCA7-ED74-4DCD-A9D2-63F90D532335}</ProjectGuid>
