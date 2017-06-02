@@ -137,5 +137,6 @@ Color Graphics::convertToColor(ForegroundColor f) {
 	case ForegroundColor::Orange:	color = Color::Orange; break;
 	case ForegroundColor::White:	color = Color::White; break;
 	}
+
 	return color;
 }
