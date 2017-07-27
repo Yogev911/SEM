@@ -11,7 +11,11 @@ int main(int argc, char **argv)
 	Panel p(25, 50);
 	tName.setValue("Sherlock Holmes sfasaf");
 	tName.setBorder(BorderType::Double);
+<<<<<<< HEAD
 	tName.setBackGround(BackgroundColor::Red); 
+=======
+	tName.setBackGround(BackgroundColor::Red);
+>>>>>>> f93efb7b1399c85c0040808a5f70e2655a1644a8
 	tName.setForeground(ForegroundColor::Cyan);
 	Control::setFocus(&tName);
 	p.setBorder(BorderType::Double);
