@@ -19,7 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="EventEngine.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EventEngine.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{55BA4FDA-D960-4127-90E1-5BC55DD657FA}</ProjectGuid>
