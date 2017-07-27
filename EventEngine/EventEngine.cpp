@@ -39,7 +39,7 @@ void EventEngine::run(Control &c)
 				auto code = record.Event.KeyEvent.wVirtualKeyCode;
 				auto chr = record.Event.KeyEvent.uChar.AsciiChar;
 				if (code == VK_TAB) {
-					if (!Panel::getMsgOpen()) {
+					if (!Panel::getMsgOpen()){
 						moveFocus(c, f);
 					}
 				}
@@ -78,9 +78,10 @@ void EventEngine::moveFocus(Control &main, Control *focused)
 	vector<Control*> controls;
 	main.getAllControls(controls);
 	auto it = find(controls.begin(), controls.end(), focused);
-	do {
+	do{
 		if (++it == controls.end())
 			it = controls.begin();
-	} while (!(*it)->canGetFocus());
+	}
+	while (!(*it)->canGetFocus());
 	Control::setFocus(*it);
 }

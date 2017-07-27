@@ -1,7 +1,7 @@
 #include "TextBox.h"
 
 
-TextBox::TextBox(int width) : Control(width), curserPosition() {}
+TextBox::TextBox(int width) : Control(width) , curserPosition(){}
 
 void TextBox::setValue(string val) {
 	value = val.substr(0, getWidth() - 2);
@@ -23,8 +23,8 @@ void TextBox::draw(Graphics& graphics, int x, int y, size_t layer) {
 	}
 	graphics.write(getBodyLeft(), getBodyTop(), toPrint);
 	if (isFocus()) {
-		if (Control::getFocus() == this) graphics.setCursorVisibility(true);
-	}
+		if(Control::getFocus() == this) graphics.setCursorVisibility(true);
+	} 
 	graphics.resetColors();
 }
 
@@ -32,14 +32,13 @@ int TextBox::getCurserPosition() {
 	return curserPosition;
 }
 
-void TextBox::moveCurser(Graphics g) {
-	if (getCurserPosition() > getWidth() - 2) {
+void TextBox::moveCurser(Graphics g){
+	if (getCurserPosition() > getWidth()-2){
 		g.moveTo(getBodyLeft() + getCurserPosition() - 2, getBodyTop());
 	}
-	else if (curserPosition == 1) {
+	else if (curserPosition == 1){
 		g.moveTo(getBodyLeft(), getBodyTop());
-	}
-	else {
+	} else {
 		g.moveTo(getBodyLeft() + getCurserPosition() - 1, getBodyTop());
 	}
 }
@@ -48,58 +47,58 @@ void TextBox::keyDown(WORD kind, CHAR c) {
 
 	switch (kind)
 	{
-	case VK_DOWN:
-	case VK_UP:
-	case VK_RETURN:
-		break;
+		case VK_DOWN:
+		case VK_UP:
+		case VK_RETURN:
+			break;
 
-	case VK_RIGHT:
-		moveRight();
-		break;
+		case VK_RIGHT:
+			moveRight();
+			break;
 
-	case VK_LEFT:
-		moveLeft();
-		break;
+		case VK_LEFT:
+			moveLeft();
+			break;
 
-	case VK_RWIN:
-		moveRight();
-		break;
+		case VK_RWIN:
+			moveRight();
+			break;
 
-	case VK_LWIN:
-		moveLeft();
-		break;
+		case VK_LWIN:
+			moveLeft();
+			break;
 
-	case VK_BACK:
-		deleteLeft();
-		break;
+		case VK_BACK:
+			deleteLeft();
+			break;
 
-	case VK_DELETE:
-		deleteRight();
-		break;
+		case VK_DELETE:
+			deleteRight();
+			break;
 
-	default:
-		addCharecter(c);
-		break;
+		default:
+			addCharecter(c);
+			break;
 	}
 }
 
-void TextBox::mousePressed(short x, short y, bool b) {
+void TextBox::mousePressed(short x, short y, bool b){
 	Control::mousePressed(x, y, b);
 }
 
 
-void TextBox::moveRight() {
+void TextBox::moveRight(){
 	int x = getBodyLeft() + getWidth();
-	if (getBodyLeft() + curserPosition > getBodyLeft() + getWidth() - 3) return;
+	if (getBodyLeft() + curserPosition > getBodyLeft() +  getWidth() - 3) return;
 	curserPosition++;
 }
 
-void TextBox::moveLeft() {
-	if (curserPosition == 1) return;
+void TextBox::moveLeft(){
+	if (curserPosition ==  1) return;
 	curserPosition--;
 }
 
-void TextBox::deleteLeft() {
+void TextBox::deleteLeft(){
 	if (curserPosition == 1 || !value.length()) {
 		moveLeft();
 		return;
@@ -108,16 +107,16 @@ void TextBox::deleteLeft() {
 	moveLeft();
 }
 
-void TextBox::deleteLast() {
+void TextBox::deleteLast(){
 	value.erase(getWidth() - 2, 1);
 }
 
-void TextBox::deleteRight() {
+void TextBox::deleteRight(){
 	if (curserPosition > value.length()) return;
 	value.erase(curserPosition - 1, 1);
 }
 
-void TextBox::addCharecter(CHAR c) {
+void TextBox::addCharecter(CHAR c){
 	if (value.length() == getWidth() - 2) {
 		return;
 	}

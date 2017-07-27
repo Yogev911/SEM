@@ -25,7 +25,7 @@ private:
 };
 
 
-int main(void) {
+int main(void){
 
 	Label lName(20, "Name: ");
 	//lName.setText("Name: ");
