@@ -18,6 +18,12 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MsgBox.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MsgBox.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0539E14F-A11E-4ABF-8946-61EBF0CEA6ED}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
