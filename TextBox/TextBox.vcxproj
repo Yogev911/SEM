@@ -18,6 +18,13 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="TextBox.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TextBox.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{579F5578-AC14-4A00-AE61-F105BD53E2F8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
